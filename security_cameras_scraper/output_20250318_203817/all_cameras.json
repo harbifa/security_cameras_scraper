@@ -1,0 +1,155 @@
+{
+  "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/": {
+    "General information": {
+      "Product Title": "iDS-7208HUHI-M1/S",
+      "Product Type": "8-ch 5 MP 1U H.265 AcuSense DVR",
+      "Source URL": "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/",
+      "Manufacturer": "Hikvision"
+    },
+    "Motion Detection 2.0": {
+      "Human/Vehicle Analysis": "Deep learning-based motion detection 2.0 is enabled by default for all analog channels, it can classify human and vehicle, and extremely reduce false alarms caused by objects like leaves and lights; Quick search by object or event type is supported;"
+    },
+    "Perimeter Protection": {
+      "Human/Vehicle Analysis": "Up to 4-ch"
+    },
+    "Facial Detection": {
+      "Facial Detection and Capture": "Face picture detection, face picture search"
+    },
+    "Video and Audio": {
+      "IP Video Input": "4-ch (up to 12-ch) Up to 8 MP resolution Enhanced IP mode on: 8-ch (up to 16-ch), each up to 4 Mbps ;Support H.265+/H.265/H.264+/H.264 IP cameras",
+      "Analog Video Input": "8-ch;BNC interface (1.0 Vp-p, 75 Ω), supporting coaxitron connection",
+      "HDMI Output": "1-ch, 4K (3840 × 2160)/30Hz, 2K (2560 × 1440)/60Hz, 1920 × 1080/60Hz, 1280 × 1024/60Hz, 1280 × 720/60Hz HDMI/VGA simultaneous output",
+      "CVBS Input": "PAL/NTSC",
+      "CVBS Output": "1-ch, BNC (1.0 Vp-p, 75 Ω), resolution: PAL: 704 × 576, NTSC: 704 × 480",
+      "Synchronous playback": "8-ch",
+      "HDTVI Input": "8 MP(3840 × 2160)@15 fps, 8 MP(3840 × 2160)@12 fps, 3K(2960 x 1665)@20 fps, 5 MP(2560 × 1944)@20 fps, 5 MP(2560 × 1944)@12 fps, 4 MP(2560 × 1440)@30 fps, 4 MP(2560 × 1440)@25 fps, 3 MP@18 fps,1080p@30 fps, 1080p@25 fps,720p@30 fps, 720p@25 fps",
+      "AHD Input": "5 MP(2560 × 1944)@20 fps, 5 MP(2560 × 1944)@12 fps, 4 MP(2560 × 1440)@30 fps, 4 MP(2560 × 1440)@25 fps, 1080p@30 fps, 1080p@25 fps, 720p@30 fps, 720p@25 fps",
+      "VGA Output": "1-ch, 1920 × 1080/60Hz, 1280 × 1024/60Hz, 1280 × 720/60Hz",
+      "HDCVI Input": "8 MP(3840 × 2160)@15 fps, 8 MP(3840 × 2160)@12 fps, 5 MP(2592 × 1944)@20 fps, 4 MP(2560 × 1440)@30 fps, 4 MP(2560 × 1440)@25 fps, 1080p@30 fps, 1080p@25 fps, 720p@30 fps, 720p@25 fps",
+      "Audio Output": "1-ch, RCA (Linear, 1 KΩ)",
+      "Audio Input": "1-ch, RCA (2.0 Vp-p, 1 KΩ)",
+      "Two-Way Audio": "1-ch, RCA (2.0 Vp-p, 1 KΩ) (using the first audio input)"
+    },
+    "Recording": {
+      "Video Compression": "H.265 Pro+/H.265 Pro/H.265/H.264+/H.264",
+      "Encoding Resolution": "8 MP/5 MP/3K/4 MP/3 MP/1080p/720p/WD1/4CIF/VGA/CIF",
+      "Frame Rate": "Main stream: 8 MP@8 fps/3K@12 fps/5 MP@12 fps/4 MP@15 fps/8 MP Lite@15 fps/3 MP@18 fps 1080p/720p/WD1/4CIF/VGA/CIF@25 fps (P)/30 fps (N) Sub-stream: WD1/4CIF/CIF@25 fps (P)/30 fps (N)",
+      "Video Bitrate": "32 Kbps to 10 Mbps",
+      "Dual-stream": "Support",
+      "Stream Type": "Video, Video & Audio",
+      "Audio Compression": "G.711u",
+      "Audio Bitrate": "64 Kbps"
+    },
+    "Network": {
+      "Total Bandwidth": "128Mbps",
+      "Network Protocol": "TCP/IP, PPPoE, DHCP, Hik-Connect, DNS, DDNS, NTP, SADP, NFS, iSCSI, UPnP™, HTTPS, ONVIF",
+      "Remote Connection": "64",
+      "Network Interface": "1,RJ45 10M/100M/1000M self-adaptive Ethernet interface"
+    },
+    "Auxiliary Interface": {
+      "SATA": "1 SATA interface",
+      "Capacity": "Up to 10 TB capacity for each disk",
+      "Serial Interface": "RS-485 (half-duplex)",
+      "USB Interface": "1 × USB 2.0； 1 × USB 3.0",
+      "Alarm In/Out": "N/A"
+    },
+    "General": {
+      "Power Supply": "12 VDC",
+      "Consumption": "≤ 10 W",
+      "Working Temperature": "-10 °C to +55 °C (+14 °F to +131 °F)",
+      "Working Humidity": "10% to 90%",
+      "Dimension (W × D × H)": "315 × 242 × 45 mm (12.4 × 9.5 × 1.8 inch)",
+      "Weight": "≤ 2 kg (4.4 lb)"
+    }
+  },
+  "https://www.dahuasecurity.com/es/products/All-Products/HDCVI-Cameras/Lite-Series/1080P/1080-P/HAC-HFW1200TH-I8-A=S6": {
+    "General information": {
+      "Product Title": "HAC-HFW1200TH-I8-A",
+      "Product Type": "2MP IR HDCVI Fixed-focal Bullet Camera",
+      "Source URL": "https://www.dahuasecurity.com/es/products/All-Products/HDCVI-Cameras/Lite-Series/1080P/1080-P/HAC-HFW1200TH-I8-A=S6",
+      "Manufacturer": "Dahua"
+    },
+    "Camera": {
+      "Image Sensor": "2 MP CMOS",
+      "Max. Resolution": "1920 (H) × 1080 (V)",
+      "Scanning System": "Progressive",
+      "Electronic Shutter Speed": "PAL: 1/25 s–1/100000 sNTSC: 1/30 s–1/100000 s",
+      "Min. Illumination": "0.01 lux@F2.0 (Color, 30 IRE)0.001 lux@F2.0 (B/W, 30 IRE)0 lux (Illuminator on)",
+      "S/N Ratio": ">65 dB",
+      "Illumination Distance": "80 m (262.47 ft)",
+      "Illuminator On/Off Control": "Auto",
+      "Illuminator Number": "2 (IR light)",
+      "Angle Adjustment": "Pan: 0°–360°Tilt: 0°–90°Rotation: 0°–360°"
+    },
+    "Lens": {
+      "Lens Type": "Fixed-focal",
+      "Lens Mount": "M12",
+      "Focal Length": "2.8 mm; 3.6 mm ;6 mm",
+      "Max. Aperture": "F2.0",
+      "Field of View": "2.8 mm: H: 102°; V: 60°; D: 129°3.6 mm: H: 83°; V: 48°; D: 104°6 mm: H: 47°; V: 27°; D: 54°",
+      "Iris Control": "Fixed",
+      "Close Focus Distance": "2.8 mm: 0.5 m (1.64 ft)3.6 mm: 0.7 m (2.30 ft)6 mm: 2.3 m (7.55 ft)",
+      "DORI Distance": [
+        {
+          "Lens": "2.8 mm",
+          "Detect": "41.4 m(135.83 ft)",
+          "Observe": "16.5 m(42.13 ft)",
+          "Recognize": "8.3 m( 27.23 ft)",
+          "Identify": "4.1 m(13.45 ft)"
+        },
+        {
+          "Lens": "3.6 mm",
+          "Detect": "50.9 m(166.99 ft)",
+          "Observe": "20.3 m(66.60 ft)",
+          "Recognize": "10.2 m(33.46 ft)",
+          "Identify": "5.1 m(16.73 ft)"
+        },
+        {
+          "Lens": "6 mm",
+          "Detect": "95.1 m(312.01 ft)",
+          "Observe": "38.0 m(124.67 ft)",
+          "Recognize": "19.0 m(62.34 ft)",
+          "Identify": "9.5 m(31.17 ft)"
+        }
+      ]
+    },
+    "Video": {
+      "Video Frame Rate": "CVI:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;AHD:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;TVI:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;CVBS:PAL: 960H;NTSC: 960H",
+      "Resolution": "1080p (1920 × 1080); 960H (960 × 576/960 × 480)",
+      "Day/Night": "Auto(ICR)/Color/B/W",
+      "BLC": "BLC; HLC; DWDR",
+      "WDR": "DWDR",
+      "White Balance": "Auto; Area white balance",
+      "Gain Control": "Auto",
+      "Noise Reduction": "3D NR",
+      "Illumination Mode": "Smart IR",
+      "Mirror": "Yes",
+      "Privacy Masking": "Off/On (8 areas, rectangle)"
+    },
+    "Certification": {
+      "Certifications": "CE-LVD: EN 62368-1;CE-EMC: EN 55032; EN 55035;FCC: 47 CFR FCC Part 15, Subpart B"
+    },
+    "Port": {
+      "Video Output": "Video output choices of CVI/TVI/AHD/CVBS by one BNC port",
+      "Audio Input": "One channel built-in Mic"
+    },
+    "Power": {
+      "Power Supply": "12 VDC ± 30%",
+      "Power Consumption": "Max 4.9 W (12 VDC, IR on)"
+    },
+    "Environment": {
+      "Operating Temperature": "–40 °C to +60 °C (–40 °F to +140 °F)",
+      "Operating Humidity": "<95% (RH), non-condensing",
+      "Storage Temperature": "–40 °C to +60 °C (–40 °F to +140 °F)",
+      "Storage Humidity": "<95% (RH), non-condensing",
+      "Protection": "IP67"
+    },
+    "Structure": {
+      "Casing Material": "Metal front cover + plastic rear barrel + metal bracket",
+      "Product Dimensions": "240.7 mm × 90.7 mm × 90.4 mm (9.48\" × 3.57\" × 3.56\")",
+      "Net Weight": "0.41 kg (0.90 lb)",
+      "Gross Weight": "0.62 kg (1.37 lb)",
+      "Installation": "Wall mount; ceiling mount; vertical pole mount"
+    }
+  }
+}

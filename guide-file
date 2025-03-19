@@ -1,0 +1,300 @@
+# دليل استخدام مكتبة استخراج بيانات كاميرات المراقبة
+
+## مقدمة
+
+هذا الدليل يشرح كيفية استخدام مكتبة `security_cameras_scraper` لاستخراج بيانات منتجات كاميرات المراقبة من مواقع الشركات المصنعة. المكتبة تدعم حاليًا شركتي Hikvision و Dahua، مع إمكانية إضافة دعم لشركات أخرى.
+
+## هيكل المشروع
+
+```
+security_cameras_scraper/
+│
+├── security_cameras_scraper/          # مجلد المكتبة الرئيسي
+│   ├── __init__.py                    # ملف تهيئة المكتبة
+│   ├── scraper.py                     # الكلاس الرئيسي للمكتبة
+│   ├── scrapers/                      # مجلد المستخرجات
+│   │   ├── __init__.py
+│   │   ├── hikvision_scraper.py       # محدد لـ Hikvision
+│   │   └── dahua_scraper.py           # محدد لـ Dahua
+│   ├── utils/                         # مجلد الأدوات المساعدة
+│   │   ├── __init__.py
+│   │   ├── http_utils.py              # أدوات طلبات HTTP
+│   │   ├── html_utils.py              # أدوات تحليل HTML
+│   │   └── data_utils.py              # أدوات معالجة البيانات
+│   └── export/                        # مجلد أدوات التصدير
+│       ├── __init__.py
+│       ├── json_exporter.py           # تصدير إلى JSON
+│       ├── csv_exporter.py            # تصدير إلى CSV
+│       └── excel_exporter.py          # تصدير إلى Excel
+│
+├── tests.py                           # اختبارات الوحدة
+├── example.py                         # مثال على الاستخدام
+├── setup.py                           # ملف إعداد المكتبة
+└── README.md                          # ملف التوثيق
+```
+
+## متطلبات التثبيت
+
+تحتاج إلى تثبيت المكتبات التالية قبل استخدام المكتبة:
+
+```bash
+pip install requests beautifulsoup4 lxml pandas openpyxl
+```
+
+## تثبيت المكتبة
+
+### الطريقة 1: تثبيت من مصدر محلي
+
+```bash
+# الانتقال إلى مجلد المشروع
+cd /path/to/security_cameras_scraper
+
+# تثبيت المكتبة في وضع التطوير
+pip install -e .
+```
+
+### الطريقة 2: التثبيت من GitHub (إذا تم نشر المكتبة)
+
+```bash
+pip install git+https://github.com/username/security_cameras_scraper.git
+```
+
+## أساسيات استخدام المكتبة
+
+### استخراج بيانات منتج واحد
+
+```python
+from security_cameras_scraper import CameraScraper
+
+# إنشاء كائن CameraScraper
+scraper = CameraScraper()
+
+# استخراج بيانات منتج من رابط
+url = "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/"
+data = scraper.scrape(url)
+
+# تصدير البيانات إلى ملف JSON
+scraper.export_to_json(data, "camera_specs.json")
+
+# تصدير البيانات إلى ملف CSV
+scraper.export_to_csv(data, "camera_specs.csv")
+
+# تصدير البيانات إلى ملف Excel
+scraper.export_to_excel(data, "camera_specs.xlsx")
+```
+
+### استخراج بيانات عدة منتجات
+
+```python
+from security_cameras_scraper import CameraScraper
+
+# إنشاء كائن CameraScraper
+scraper = CameraScraper()
+
+# قائمة روابط المنتجات
+urls = [
+    "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/",
+    "https://www.dahuasecurity.com/es/products/All-Products/HDCVI-Cameras/Lite-Series/1080P/1080-P/HAC-HFW1200TH-I8-A=S6"
+]
+
+# استخراج بيانات جميع المنتجات
+results = scraper.scrape_multiple(urls)
+
+# تصدير نتيجة كل منتج إلى ملف منفصل
+for url, data in results.items():
+    # استخراج اسم الملف من نهاية الرابط
+    filename = url.split('/')[-2] if url.endswith('/') else url.split('/')[-1]
+    filename = filename.replace('=', '_')  # استبدال الأحرف غير الصالحة لاسم الملف
+    
+    # تصدير البيانات إلى ملف JSON
+    scraper.export_to_json(data, f"{filename}.json")
+```
+
+### استخدام أداة سطر الأوامر
+
+المكتبة توفر أداة سطر أوامر (example.py) يمكنك استخدامها لاستخراج البيانات:
+
+```bash
+# استخراج بيانات من رابط واحد وتصديرها بتنسيق JSON
+python example.py --url https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/ --format json
+
+# استخراج بيانات من ملف يحتوي على روابط متعددة وتصديرها بجميع التنسيقات
+python example.py --file urls.txt --format all --output results
+```
+
+حيث يمكن إنشاء ملف `urls.txt` يحتوي على رابط واحد في كل سطر:
+
+```
+https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/
+https://www.dahuasecurity.com/es/products/All-Products/HDCVI-Cameras/Lite-Series/1080P/1080-P/HAC-HFW1200TH-I8-A=S6
+```
+
+## الميزات المتقدمة
+
+### إضافة دعم لشركة جديدة
+
+يمكنك إضافة دعم لشركة جديدة من خلال إنشاء مستخرج مخصص وإضافته إلى المكتبة:
+
+```python
+from security_cameras_scraper import CameraScraper
+from bs4 import BeautifulSoup
+
+class NewManufacturerScraper:
+    """مستخرج مخصص لشركة جديدة."""
+    
+    def __init__(self):
+        """تهيئة المستخرج."""
+        self.name = "NewManufacturer"
+    
+    def extract(self, html_content, url):
+        """استخراج البيانات من HTML."""
+        soup = BeautifulSoup(html_content, 'lxml')
+        data = {"General information": {}}
+        
+        # استخراج عنوان المنتج
+        title_element = soup.select_one("selector_for_title")
+        if title_element:
+            data["General information"]["Product Title"] = title_element.text.strip()
+        
+        # استخراج نوع المنتج
+        type_element = soup.select_one("selector_for_type")
+        if type_element:
+            data["General information"]["Product Type"] = type_element.text.strip()
+        
+        # استخراج المواصفات التقنية
+        # ...
+        
+        return data
+
+# إنشاء كائن CameraScraper
+scraper = CameraScraper()
+
+# إضافة المستخرج المخصص
+scraper.add_manufacturer_scraper("new_manufacturer", NewManufacturerScraper())
+
+# استخدام المستخرج المخصص
+url = "https://www.new-manufacturer.com/products/camera123"
+data = scraper.scrape(url)
+```
+
+### تخصيص رؤوس HTTP
+
+يمكنك تخصيص رؤوس HTTP المستخدمة في طلبات المكتبة:
+
+```python
+from security_cameras_scraper import CameraScraper
+
+# إنشاء كائن CameraScraper مع تعطيل الرؤوس الافتراضية
+scraper = CameraScraper(use_default_headers=False)
+
+# تحديد رؤوس مخصصة
+custom_headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Firefox/100.0",
+    "Accept-Language": "ar,en-US;q=0.7,en;q=0.3"
+}
+
+# استخراج بيانات منتج باستخدام الرؤوس المخصصة
+url = "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/"
+data = scraper.scrape(url, headers=custom_headers)
+```
+
+## استخدام المستخرجات مباشرة
+
+يمكنك استخدام المستخرجات مباشرة إذا كنت تريد مزيدًا من التحكم:
+
+```python
+from security_cameras_scraper.scrapers.hikvision_scraper import HikvisionScraper
+from security_cameras_scraper.utils.http_utils import fetch_page
+
+# استرجاع محتوى HTML
+url = "https://www.hikvision.com/en/products/Turbo-HD-Products/DVR/AcuSense-Series/iDS-7208HUHI-M1-S/"
+html_content = fetch_page(url)
+
+# استخدام مستخرج Hikvision
+hikvision_scraper = HikvisionScraper()
+data = hikvision_scraper.extract(html_content, url)
+
+print(data)
+```
+
+## حل المشكلات الشائعة
+
+### المكتبة غير موجودة بعد التثبيت
+
+تأكد من أن هيكل المشروع صحيح ويحتوي على مجلد فرعي `security_cameras_scraper` داخل المجلد الرئيسي. ثم أعد تثبيت المكتبة:
+
+```bash
+pip uninstall -y security_cameras_scraper
+pip install -e .
+```
+
+### خطأ في استخراج البيانات
+
+قد تتغير بنية مواقع الشركات المصنعة مع مرور الوقت. إذا واجهت مشاكل في استخراج البيانات، تحقق من سجلات المكتبة للحصول على تفاصيل الأخطاء:
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)  # تفعيل التسجيل المفصل
+
+from security_cameras_scraper import CameraScraper
+scraper = CameraScraper()
+data = scraper.scrape(url)
+```
+
+### الصفحة غير متاحة
+
+إذا كانت الصفحة محظورة أو غير متاحة، جرب تخصيص رؤوس HTTP أو استخدام وسيط (proxy):
+
+```python
+from security_cameras_scraper import CameraScraper
+from security_cameras_scraper.utils.http_utils import fetch_page
+
+# استخدام وسيط
+proxies = {
+    'http': 'http://proxy.example.com:8080',
+    'https': 'https://proxy.example.com:8080'
+}
+
+# الحصول على HTML مع وسيط
+html = fetch_page(url, headers=headers, proxies=proxies)
+
+# ثم استخدام المستخرج مباشرة
+scraper = CameraScraper()
+hikvision_scraper = scraper.scrapers['hikvision']
+data = hikvision_scraper.extract(html, url)
+```
+
+## تشغيل الاختبارات
+
+للتأكد من أن المكتبة تعمل بشكل صحيح، يمكنك تشغيل الاختبارات:
+
+```bash
+# من المجلد الرئيسي للمشروع
+python tests.py
+
+# أو إذا كان ملف الاختبار في المجلد الفرعي
+python security_cameras_scraper/tests.py
+```
+
+## المشروع المستقبلي (المرحلة الثانية)
+
+المرحلة الثانية من المشروع ستتضمن تطوير واجهة ويب تستخدم هذه المكتبة وتوفر:
+
+1. إمكانية إدخال رابط منتج لاستخراج بياناته
+2. عرض النتائج بتنسيق منظم
+3. إمكانية تصدير البيانات بعدة صيغ
+4. ميزة مقارنة المنتجات
+5. إمكانية استخراج بيانات مجموعة من الروابط دفعة واحدة
+
+يمكن استخدام إطار عمل مثل Flask أو Streamlit لتطوير هذه الواجهة.
+
+## مصادر مفيدة
+
+- [توثيق BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [توثيق Requests](https://requests.readthedocs.io/)
+- [توثيق Pandas](https://pandas.pydata.org/docs/)
+- [دليل حزم Python](https://packaging.python.org/tutorials/packaging-projects/)
+
+----
+
+تم تطوير هذا الدليل بواسطة [اسمك] - تاريخ التحديث: [التاريخ الحالي]

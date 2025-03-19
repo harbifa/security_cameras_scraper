@@ -1,0 +1,90 @@
+{
+    "General information": {
+        "Product Title": "HAC-HFW1200TH-I8-A",
+        "Product Type": "2MP IR HDCVI Fixed-focal Bullet Camera",
+        "Source URL": "https://www.dahuasecurity.com/es/products/All-Products/HDCVI-Cameras/Lite-Series/1080P/1080-P/HAC-HFW1200TH-I8-A=S6",
+        "Manufacturer": "Dahua"
+    },
+    "Camera": {
+        "Image Sensor": "2 MP CMOS",
+        "Max. Resolution": "1920 (H) × 1080 (V)",
+        "Scanning System": "Progressive",
+        "Electronic Shutter Speed": "PAL: 1/25 s–1/100000 sNTSC: 1/30 s–1/100000 s",
+        "Min. Illumination": "0.01 lux@F2.0 (Color, 30 IRE)0.001 lux@F2.0 (B/W, 30 IRE)0 lux (Illuminator on)",
+        "S/N Ratio": ">65 dB",
+        "Illumination Distance": "80 m (262.47 ft)",
+        "Illuminator On/Off Control": "Auto",
+        "Illuminator Number": "2 (IR light)",
+        "Angle Adjustment": "Pan: 0°–360°Tilt: 0°–90°Rotation: 0°–360°"
+    },
+    "Lens": {
+        "Lens Type": "Fixed-focal",
+        "Lens Mount": "M12",
+        "Focal Length": "2.8 mm; 3.6 mm ;6 mm",
+        "Max. Aperture": "F2.0",
+        "Field of View": "2.8 mm: H: 102°; V: 60°; D: 129°3.6 mm: H: 83°; V: 48°; D: 104°6 mm: H: 47°; V: 27°; D: 54°",
+        "Iris Control": "Fixed",
+        "Close Focus Distance": "2.8 mm: 0.5 m (1.64 ft)3.6 mm: 0.7 m (2.30 ft)6 mm: 2.3 m (7.55 ft)",
+        "DORI Distance": [
+            {
+                "Lens": "2.8 mm",
+                "Detect": "41.4 m(135.83 ft)",
+                "Observe": "16.5 m(42.13 ft)",
+                "Recognize": "8.3 m( 27.23 ft)",
+                "Identify": "4.1 m(13.45 ft)"
+            },
+            {
+                "Lens": "3.6 mm",
+                "Detect": "50.9 m(166.99 ft)",
+                "Observe": "20.3 m(66.60 ft)",
+                "Recognize": "10.2 m(33.46 ft)",
+                "Identify": "5.1 m(16.73 ft)"
+            },
+            {
+                "Lens": "6 mm",
+                "Detect": "95.1 m(312.01 ft)",
+                "Observe": "38.0 m(124.67 ft)",
+                "Recognize": "19.0 m(62.34 ft)",
+                "Identify": "9.5 m(31.17 ft)"
+            }
+        ]
+    },
+    "Video": {
+        "Video Frame Rate": "CVI:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;AHD:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;TVI:PAL: 1080p@25 fps;NTSC: 1080p@30 fps;CVBS:PAL: 960H;NTSC: 960H",
+        "Resolution": "1080p (1920 × 1080); 960H (960 × 576/960 × 480)",
+        "Day/Night": "Auto(ICR)/Color/B/W",
+        "BLC": "BLC; HLC; DWDR",
+        "WDR": "DWDR",
+        "White Balance": "Auto; Area white balance",
+        "Gain Control": "Auto",
+        "Noise Reduction": "3D NR",
+        "Illumination Mode": "Smart IR",
+        "Mirror": "Yes",
+        "Privacy Masking": "Off/On (8 areas, rectangle)"
+    },
+    "Certification": {
+        "Certifications": "CE-LVD: EN 62368-1;CE-EMC: EN 55032; EN 55035;FCC: 47 CFR FCC Part 15, Subpart B"
+    },
+    "Port": {
+        "Video Output": "Video output choices of CVI/TVI/AHD/CVBS by one BNC port",
+        "Audio Input": "One channel built-in Mic"
+    },
+    "Power": {
+        "Power Supply": "12 VDC ± 30%",
+        "Power Consumption": "Max 4.9 W (12 VDC, IR on)"
+    },
+    "Environment": {
+        "Operating Temperature": "–40 °C to +60 °C (–40 °F to +140 °F)",
+        "Operating Humidity": "<95% (RH), non-condensing",
+        "Storage Temperature": "–40 °C to +60 °C (–40 °F to +140 °F)",
+        "Storage Humidity": "<95% (RH), non-condensing",
+        "Protection": "IP67"
+    },
+    "Structure": {
+        "Casing Material": "Metal front cover + plastic rear barrel + metal bracket",
+        "Product Dimensions": "240.7 mm × 90.7 mm × 90.4 mm (9.48\" × 3.57\" × 3.56\")",
+        "Net Weight": "0.41 kg (0.90 lb)",
+        "Gross Weight": "0.62 kg (1.37 lb)",
+        "Installation": "Wall mount; ceiling mount; vertical pole mount"
+    }
+}
